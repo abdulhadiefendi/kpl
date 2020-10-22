@@ -25,7 +25,7 @@ class C_subkategori extends CI_Controller {
 		$data['backTo'] = 'subkategori';
 		$this->template->_backend('backend/subkategori/subkategoritambah','form',$data);
 	}
-	public function edit($id){
+	public function edit($idSubKategori){
 		$where = array('idSubKategori' => $id);
 		$data['d'] = $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] = 'subkategori';
@@ -41,7 +41,8 @@ class C_subkategori extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal ditambahkan!');
             $this->create();
-        }else{
+        } 
+        if ($this->form_validation->run() == TRUE){
         	$record = array(
                 "nmSubKategori" => $this->input->post('nama')
             );
@@ -71,7 +72,7 @@ class C_subkategori extends CI_Controller {
             $this->template->_back();
         }
 	}
-	public function delete($id){
+	public function delete($idSubKategori){
 		$where = array('idSubKategori' => $id);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){

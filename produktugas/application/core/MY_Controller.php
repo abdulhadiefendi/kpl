@@ -7,6 +7,6 @@ class MY_Controller extends CI_Controller {
 	}
 
 	function nama_kamu($nama){
-		echo "Nama kamu adalah ". $nama ." !";
+		return "Nama kamu adalah ". htmlspecialchars($nama) ." !";
 	}
 }

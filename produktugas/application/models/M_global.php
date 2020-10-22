@@ -5,7 +5,8 @@ class M_global extends CI_Model
     {
         if ($where == null) {
             return $this->db->get($table);
-        } else {
+        } 
+        if ($where != null) {
             return $this->db->get_where($table, $where);
         }
     }

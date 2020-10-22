@@ -27,14 +27,14 @@ class C_landing extends CI_Controller {
 				'p.nmProduk' => $this->input->post('cari')
 			);
 			$data['data'] = $this->produk->getAll('',$where)->result();
-		}else{
+		}else if(!($this->input->post('cari') && !($this->input->post('kategori')){
 			$data['data'] = $this->produk->getAll()->result();
 		}
 		$this->load->view('template/frontend/head',$data);
 		$this->load->view('template/frontend/landing',$data);
 		$this->load->view('template/frontend/footer',$data);
 	}
-	public function detail($id){
+	public function detail($idProduk){
 		$where = array(
 			'p.idProduk' => $id
 		);

@@ -46,7 +46,8 @@ class C_akun extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal diubah!');
             $this->bio();
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$where = array('idPegawai' => $this->session->userdata('id'));
         	$record = array(
                 "nmLengkap" => $this->input->post('nama')
@@ -70,7 +71,8 @@ class C_akun extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal diubah!');
             $this->password();
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$where = array(
         		'idPegawai' => $this->session->userdata('id'),
         		'password' => $this->input->post('password')

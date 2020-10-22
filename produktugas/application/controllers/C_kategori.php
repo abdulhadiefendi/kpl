@@ -26,7 +26,7 @@ class C_kategori extends CI_Controller {
 		$this->template->_backend('backend/kategori/kategoritambah','form',$data);
 	}
 
-	public function edit($id){
+	public function edit($idKategori){
 		$where = array('idKategori' => $id);
 		$data['d'] = $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] = 'kategori';
@@ -42,7 +42,8 @@ class C_kategori extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal ditambahkan!');
             $this->create();
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$record = array(
                 "nmKategori" => $this->input->post('nama')
             );
@@ -72,7 +73,7 @@ class C_kategori extends CI_Controller {
             $this->template->_back();
         }
 	}
-	public function delete($id){
+	public function delete($idKategori){
 		$where = array('idKategori' => $id);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){

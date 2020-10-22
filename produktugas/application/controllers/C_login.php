@@ -28,17 +28,19 @@ class C_login extends CI_Controller {
                 $this->session->set_userdata('email',$data->email);
                 $this->session->set_userdata('nama',$data->nmLengkap);
                 $this->session->set_userdata('username',$data->username);
-                $this->session->set_userdata('id',$data->idPegawai);
+                $this->session->set_userdata('idPegawai',$data->idPegawai);
                 redirect('kategori');
-             }else{ //akses manager
+             }
+             if($data->level != 1){ //Akses manager
                 $this->session->set_userdata('level',$data->level);
                 $this->session->set_userdata('email',$data->email);
                 $this->session->set_userdata('nama',$data->nmLengkap);
                 $this->session->set_userdata('username',$data->username);
-                $this->session->set_userdata('id',$data->idPegawai);
+                $this->session->set_userdata('idPegawai',$data->idPegawai);
                 redirect('produkmanager');
              }
-        }else{ 
+        }
+        if($auth->num_rows() <= 0){
         	$this->session->set_flashdata('gagal','Anda gagal login, Username atau password salah!');
             redirect('login');
         }

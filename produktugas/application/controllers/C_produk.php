@@ -30,7 +30,7 @@ class C_produk extends CI_Controller {
 		$this->template->_backend('backend/produk/produktambah','form',$data);
 	}
 
-	public function edit($id){
+	public function edit($idProduk){
 		$where 					= array('idProduk' => $id);
 		$data['d'] 				= $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] 		= 'produk';
@@ -40,6 +40,7 @@ class C_produk extends CI_Controller {
 	}
 
 	public function store(){
+		$namaGambar = $_FILES['gambar']['name'];
 		$this->form_validation->set_rules('nama', 'Nama Produk', 'required|is_unique[tbl_produk.nmProduk]');
 		$this->form_validation->set_rules('kategori', 'Kategori', 'required');
 		$this->form_validation->set_rules('subkategori', 'Sub Kategori', 'required');
@@ -47,7 +48,7 @@ class C_produk extends CI_Controller {
 		$this->form_validation->set_rules('ukuran', 'Ukuran', 'required');
 		$this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
-		if (empty($_FILES['gambar']['name']))
+		if (empty($namaGambar)
 		{
 		    $this->form_validation->set_rules('gambar', 'Gambar', 'required');
 		}
@@ -58,7 +59,8 @@ class C_produk extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal ditambahkan!');
             $this->create();
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE{
         	$upload = $this->template->_upload();
         	if($upload['result'] == "success"){ 
 		        $record = array(
@@ -76,7 +78,8 @@ class C_produk extends CI_Controller {
 	        	$this->global->insert($this->table,$record);
 	        	$this->session->set_flashdata('sukses','Data berhasil ditambahkan!');
 	            $this->template->_back(); 
-		    }else{ 
+		    }
+		    if($upload['result'] != "success"){ 
 		        $this->session->set_flashdata('gagal',$upload['error']);
 	            $this->template->_back();  
 		    }
@@ -98,7 +101,8 @@ class C_produk extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal diubah!');
             $this->edit($this->input->post('id'));
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$where = array('idProduk' => $this->input->post('id'));
         	$upload = $this->template->_upload();
         	if($upload['result'] == "success"){ 
@@ -114,7 +118,8 @@ class C_produk extends CI_Controller {
 	                "idPegawai" => $this->session->userdata('id'),
 	                "gambar" => base_url('assets/images/produk/'.$upload['file']['file_name'])
 	            );
-		    }else{ 
+		    }
+		    if($upload['result'] != "success"){  
 		        $record = array(
 	                "nmProduk" => $this->input->post('nama'),
 	                "idKategori" => $this->input->post('kategori'),
@@ -132,12 +137,13 @@ class C_produk extends CI_Controller {
             $this->template->_back();
         }
 	}
-	public function delete($id){
+	public function delete($idProduk){
 		$where = array('idProduk' => $id);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){
 			$this->session->set_flashdata('sukses','Data berhasil dihapus!');
-    	}else{
+    	}
+    	if($delete <= 0){
 			$this->session->set_flashdata('gagal','Data gagal dihapus!');
     	}
         $this->template->_back();

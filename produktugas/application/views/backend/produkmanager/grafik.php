@@ -22,10 +22,10 @@
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: <?php echo json_encode($kategori);?>,
+                    labels: <?php return json_encode($kategori);?>,
                     datasets: [{
                         label: '# of Votes',
-                        data: <?php echo json_encode($produk);?>,
+                        data: <?php return json_encode($produk);?>,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',

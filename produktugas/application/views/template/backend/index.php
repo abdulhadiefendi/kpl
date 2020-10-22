@@ -1,7 +1,7 @@
 <?php
-echo $header;
-echo $menu;
-echo $tipe;
-echo $content;
-echo $endtipe;
-echo $footer;
+return $header;
+return $menu;
+return $tipe;
+return $content;
+return $endtipe;
+return $footer;
