@@ -62,7 +62,8 @@ class C_subkategori extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal diubah!');
             $this->edit($this->input->post('id'));
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$where = array('idSubKategori' => $this->input->post('id'));
         	$record = array(
                 "nmSubKategori" => $this->input->post('nama')

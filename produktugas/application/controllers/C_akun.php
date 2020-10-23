@@ -86,7 +86,8 @@ class C_akun extends CI_Controller {
 	        	$this->global->update($this->table,$record,$where);
 	        	$this->session->set_flashdata('sukses','Data berhasil diubah!');
 	            $this->template->_back();
-        	}else{
+        	}
+        	if($cek <= 0){
 				$this->session->set_flashdata('gagal','Password lama tidak cocok!');
 	            $this->template->_back();
         	}
