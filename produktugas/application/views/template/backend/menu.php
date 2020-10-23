@@ -25,7 +25,7 @@
      <?php if($this->session->userdata('level') == 1){ ?>
        <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('kategori')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('kategori')) ?>">
           <!-- <i class="fas fa-fw fa-chart-area"></i> -->
           <i class="fas fa-fw fa-table"></i>
           <span>Kategori</span></a>
@@ -33,21 +33,21 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('subkategori')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('subkategori')) ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Sub Kategori</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('produk')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('produk')) ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Produk</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('pegawai')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('pegawai')) ?>">
           <i class="fas fa-fw fa-users"></i>
           <span>Pegawai</span></a>
       </li>
@@ -55,14 +55,14 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('produkmanager')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('produkmanager')) ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Produk</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= htmlspecialchars(base_url('grafik')) ?>">
+        <a class="nav-link" href="<?= esc_url(base_url('grafik')) ?>">
           <i class="fas fa-fw fa-users"></i>
           <span>Grafik</span></a>
       </li>
@@ -100,15 +100,15 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= htmlspecialchars($this->session->userdata('nama')) ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= esc_html($this->session->userdata('nama')) ?></span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= htmlspecialchars(base_url('profile')) ?>">
+                <a class="dropdown-item" href="<?= esc_url(base_url('profile')) ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="<?= htmlspecialchars(base_url('password')) ?>">
+                <a class="dropdown-item" href="<?= esc_url(base_url('password')) ?>">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Password
                 </a>

@@ -34,7 +34,7 @@
         <div class="modal-body">Tekan tombol logout jika yakin!</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?= htmlspecialchars(base_url('logout')) ?>">Logout</a>
+          <a class="btn btn-primary" href="<?= esc_url(base_url('logout')) ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -60,21 +60,21 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?= htmlspecialchars(base_url('assets/backend/vendor/jquery/jquery.min.js')) ?>"></script>
-  <script src="<?= htmlspecialchars(base_url('assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/vendor/jquery/jquery.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js')) ?>"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?= htmlspecialchars(base_url('assets/backend/vendor/jquery-easing/jquery.easing.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/vendor/jquery-easing/jquery.easing.min.js')) ?>"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?= htmlspecialchars(base_url('assets/backend/js/sb-admin-2.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/js/sb-admin-2.min.js')) ?>"></script>
 
   <!-- Page level plugins -->
-  <script src="<?= htmlspecialchars(base_url('assets/backend/vendor/datatables/jquery.dataTables.min.js')) ?>"></script>
-  <script src="<?= htmlspecialchars(base_url('assets/backend/vendor/datatables/dataTables.bootstrap4.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/vendor/datatables/jquery.dataTables.min.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/vendor/datatables/dataTables.bootstrap4.min.js')) ?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?= htmlspecialchars(base_url('assets/backend/js/demo/datatables-demo.js')) ?>"></script>
+  <script src="<?= esc_url(base_url('assets/backend/js/demo/datatables-demo.js')) ?>"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 

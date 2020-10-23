@@ -35,7 +35,7 @@
           <div class="form-group">
             <label for="passwordb">Password Baru</label>
             <input type="password" class="form-control" id="passwordb" aria-describedby="passwordbfail" placeholder="Password Baru" name="passwordb">
-            <small id="passwordbfail" class="form-text text-danger"><?= form_error('passwordb'); ?></small>
+            <small id="passwordbfail" class="form-text text-danger"><?= esc_html(form_error('passwordb')); ?></small>
           </div>
 
           <div class="form-group">

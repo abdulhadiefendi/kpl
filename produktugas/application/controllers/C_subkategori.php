@@ -78,7 +78,8 @@ class C_subkategori extends CI_Controller {
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){
 			$this->session->set_flashdata('sukses','Data berhasil dihapus!');
-    	}else{
+    	}
+    	if($delete <= 0){
 			$this->session->set_flashdata('gagal','Data gagal dihapus!');
     	}
         $this->template->_back();

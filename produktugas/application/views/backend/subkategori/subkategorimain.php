@@ -9,12 +9,12 @@
   <tbody>
   	<?php foreach ($data as $d) { ?>
     <tr>
-      <td><?= htmlspecialchars($d->idSubKategori) ?></td>
-      <td><?= htmlspecialchars($d->nmSubKategori) ?></td>
+      <td><?= esc_html($d->idSubKategori) ?></td>
+      <td><?= esc_html($d->nmSubKategori) ?></td>
       <td class="text-center">
       	<div class="btn-group" role="group" aria-label="Basic example">
-		  <a href="<?= htmlspecialchars(base_url('editsubkategori/'.$d->idSubKategori)) ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
-		  <button type="button" data-toggle="modal" data-target="#hapusModal" data-href="<?= htmlspecialchars(base_url('hapussubkategori/'.$d->idSubKategori)) ?>" class="btn btn-danger btn-hapus"><i class="far fa-trash-alt"></i></button>
+		  <a href="<?= esc_url(base_url('editsubkategori/'.$d->idSubKategori)) ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
+		  <button type="button" data-toggle="modal" data-target="#hapusModal" data-href="<?= esc_url(base_url('hapussubkategori/'.$d->idSubKategori)) ?>" class="btn btn-danger btn-hapus"><i class="far fa-trash-alt"></i></button>
 		</div>
       </td>
     </tr>

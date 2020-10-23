@@ -15,14 +15,14 @@
   <tbody>
   	<?php foreach ($data as $d) { ?>
     <tr>
-      <td><?= htmlspecialchars($d->idProduk) ?></td>
-      <td><?= htmlspecialchars($d->nmProduk) ?></td>
-      <td><?= htmlspecialchars($d->nmKategori) ?></td>
-      <td><?= htmlspecialchars($d->nmSubKategori) ?></td>
-      <td><?= htmlspecialchars($d->warna) ?></td>
-      <td><?= htmlspecialchars($d->ukuran) ?></td>
-      <td><?= htmlspecialchars($d->harga) ?></td>
-      <td><img src="<?= htmlspecialchars($d->gambar) ?>" width="100" alt="" class="img-fluid"></td>
+      <td><?= esc_html($d->idProduk) ?></td>
+      <td><?= esc_html($d->nmProduk) ?></td>
+      <td><?= esc_html($d->nmKategori) ?></td>
+      <td><?= esc_html($d->nmSubKategori) ?></td>
+      <td><?= esc_html($d->warna) ?></td>
+      <td><?= esc_html($d->ukuran) ?></td>
+      <td><?= esc_html($d->harga) ?></td>
+      <td><img src="<?= esc_url($d->gambar) ?>" width="100" alt="" class="img-fluid"></td>
     </tr>
 	<?php } ?>
   </tbody>
@@ -50,7 +50,7 @@
     foreach ($rekap as $d) { 
       if($row <= 1){
       ?>
-        <td rowspan="<?= $d->jml ?>"><?= htmlspecialchars($d->nmKategori) ?></td>
+        <td rowspan="<?= $d->jml ?>"><?= esc_html($d->nmKategori) ?></td>
       <?php
       $row = $d->jml; 
       }else{
@@ -58,14 +58,14 @@
       }
       if($sub <= 1){
       ?>
-        <td rowspan="<?= $d->sub ?>"><?= htmlspecialchars($d->nmSubKategori) ?></td>
+        <td rowspan="<?= $d->sub ?>"><?= esc_html($d->nmSubKategori) ?></td>
       <?php
       $sub = $d->sub; 
       }else{
         $sub--;
       }
       ?>
-        <td><?= htmlspecialchars($d->nmProduk) ?></td>
+        <td><?= esc_html($d->nmProduk) ?></td>
       </tr>
   <?php } ?>
   </tbody>
