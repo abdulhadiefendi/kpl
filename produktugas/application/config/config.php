@@ -23,11 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-if ( isset($_SERVER['HTTP_HOST']) ) {
+if ( isset(filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING)) ) {
 	$base = "http://" . filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING) . ':80/index.php';
 } 
-if ( isset($_SERVER['SCRIPT_NAME']) ) {
-	$base .= str_replace(basename(filter_input(INPUT_SERVER, 'SCRIPT_NAME', FILTER_SANITIZE_STRING)), "", $_SERVER['SCRIPT_NAME']);
+if ( isset(filter_input(INPUT_SERVER, 'SCRIPT_NAME', FILTER_SANITIZE_STRING)) ) {
+	$base .= str_replace(basename(filter_input(INPUT_SERVER, 'SCRIPT_NAME', FILTER_SANITIZE_STRING)), "", filter_input(INPUT_SERVER, 'SCRIPT_NAME', FILTER_SANITIZE_STRING));
 }
 $config['base_url'] = $base;
 

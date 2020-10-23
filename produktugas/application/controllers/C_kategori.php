@@ -27,7 +27,7 @@ class C_kategori extends CI_Controller {
 	}
 
 	public function edit($idKategori){
-		$where = array('idKategori' => $id);
+		$where = array('idKategori' => $idKategori);
 		$data['d'] = $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] = 'kategori';
 		$this->template->_backend('backend/kategori/kategoriedit','form',$data);
@@ -74,7 +74,7 @@ class C_kategori extends CI_Controller {
         }
 	}
 	public function delete($idKategori){
-		$where = array('idKategori' => $id);
+		$where = array('idKategori' => $idKategori);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){
 			$this->session->set_flashdata('sukses','Data berhasil dihapus!');

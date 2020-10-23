@@ -29,7 +29,7 @@ class C_pegawai extends CI_Controller {
 
 
 	public function edit($idPegawai){
-		$where = array('idPegawai' => $id);
+		$where = array('idPegawai' => $idPegawai);
 		$data['d'] = $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] = 'pegawai';
 		$this->template->_backend('backend/pegawai/pegawaiedit','form',$data);
@@ -76,7 +76,8 @@ class C_pegawai extends CI_Controller {
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('gagal','Data gagal diubah!');
             $this->edit($this->input->post('id'));
-        }else{
+        }
+        if ($this->form_validation->run() == TRUE){
         	$where = array('idPegawai' => $this->input->post('id'));
         	$record = array(
                 "nmLengkap" => $this->input->post('nama'),
@@ -90,7 +91,7 @@ class C_pegawai extends CI_Controller {
         }
 	}
 	public function delete($idPegawai){
-		$where = array('idPegawai' => $id);
+		$where = array('idPegawai' => $idPegawai);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){
 			$this->session->set_flashdata('sukses','Data berhasil dihapus!');

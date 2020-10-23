@@ -15,18 +15,18 @@
   <tbody>
   	<?php foreach ($data as $d) { ?>
     <tr>
-      <td><?= $d->idProduk ?></td>
-      <td><?= $d->nmProduk ?></td>
-      <td><?= $d->nmKategori ?></td>
-      <td><?= $d->nmSubKategori ?></td>
-      <td><?= $d->warna ?></td>
-      <td><?= $d->ukuran ?></td>
-      <td><?= $d->harga ?></td>
-      <td><img src="<?= $d->gambar ?>" alt="" class="img-fluid"></td>
+      <td><?= htmlspecialchars($d->idProduk) ?></td>
+      <td><?= htmlspecialchars($d->nmProduk) ?></td>
+      <td><?= htmlspecialchars($d->nmKategori) ?></td>
+      <td><?= htmlspecialchars($d->nmSubKategori) ?></td>
+      <td><?= htmlspecialchars($d->warna )?></td>
+      <td><?= htmlspecialchars($d->ukuran) ?></td>
+      <td><?= htmlspecialchars($d->harga) ?></td>
+      <td><img src="<?= htmlspecialchars($d->gambar) ?>" alt="" class="img-fluid"></td>
       <td class="text-center">
       	<div class="btn-group" role="group" aria-label="Basic example">
-		  <a href="<?= base_url('editproduk/'.$d->idProduk) ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
-		  <button type="button" data-toggle="modal" data-target="#hapusModal" data-href="<?= base_url('hapusproduk/'.$d->idProduk) ?>" class="btn btn-danger btn-hapus"><i class="far fa-trash-alt"></i></button>
+		  <a href="<?= htmlspecialchars(base_url('editproduk/'.$d->idProduk)) ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
+		  <button type="button" data-toggle="modal" data-target="#hapusModal" data-href="<?= htmlspecialchars(base_url('hapusproduk/'.$d->idProduk)) ?>" class="btn btn-danger btn-hapus"><i class="far fa-trash-alt"></i></button>
 		</div>
       </td>
     </tr>

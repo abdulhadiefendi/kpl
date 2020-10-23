@@ -40,7 +40,6 @@ class C_produk extends CI_Controller {
 	}
 
 	public function store(){
-		$namaGambar = $_FILES['gambar']['name'];
 		$this->form_validation->set_rules('nama', 'Nama Produk', 'required|is_unique[tbl_produk.nmProduk]');
 		$this->form_validation->set_rules('kategori', 'Kategori', 'required');
 		$this->form_validation->set_rules('subkategori', 'Sub Kategori', 'required');
@@ -48,7 +47,7 @@ class C_produk extends CI_Controller {
 		$this->form_validation->set_rules('ukuran', 'Ukuran', 'required');
 		$this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
-		if (empty($namaGambar)
+		if (empty($_FILES['gambar']['name'])
 		{
 		    $this->form_validation->set_rules('gambar', 'Gambar', 'required');
 		}
@@ -60,7 +59,7 @@ class C_produk extends CI_Controller {
 			$this->session->set_flashdata('gagal','Data gagal ditambahkan!');
             $this->create();
         }
-        if ($this->form_validation->run() == TRUE{
+        if ($this->form_validation->run() == TRUE){
         	$upload = $this->template->_upload();
         	if($upload['result'] == "success"){ 
 		        $record = array(

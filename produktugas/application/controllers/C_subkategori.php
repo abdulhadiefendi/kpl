@@ -26,7 +26,7 @@ class C_subkategori extends CI_Controller {
 		$this->template->_backend('backend/subkategori/subkategoritambah','form',$data);
 	}
 	public function edit($idSubKategori){
-		$where = array('idSubKategori' => $id);
+		$where = array('idSubKategori' => $idSubKategori);
 		$data['d'] = $this->global->getAll($this->table,$where)->row();
 		$data['backTo'] = 'subkategori';
 		$this->template->_backend('backend/subkategori/subkategoriedit','form',$data);
@@ -73,7 +73,7 @@ class C_subkategori extends CI_Controller {
         }
 	}
 	public function delete($idSubKategori){
-		$where = array('idSubKategori' => $id);
+		$where = array('idSubKategori' => $idSubKategori);
     	$delete = $this->global->delete($this->table,$where);
     	if($delete > 0){
 			$this->session->set_flashdata('sukses','Data berhasil dihapus!');
