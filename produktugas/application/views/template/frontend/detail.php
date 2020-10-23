@@ -4,7 +4,7 @@
 		  <div class="card-body">
 		    <div class="row">
 		    	<div class="col-md-3">
-		    		<img src="<?= esc_url($data->gambar) ?>" alt="<?= $data->gambar ?>" class="img-fluid">
+		    		<img src="<?= esc_url($data->gambar) ?>" alt="<?= esc_html($data->gambar) ?>" class="img-fluid">
 		    	</div>
 		    	<div class="col-md-8">
 		    		<dl class="row">

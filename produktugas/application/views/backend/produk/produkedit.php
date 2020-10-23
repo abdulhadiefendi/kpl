@@ -22,7 +22,7 @@
     <select name="subkategori" id="subkategori" class="form-control" aria-describedby="subkategorifail">
     	<option value="" disabled>Pilih Sub Kategori</option>
     	<?php foreach($subkategori as $l){?>
-    		<option value="<?= $l->idSubKategori ?>" <?= $d->idSubKategori == $l->idSubKategori ? 'selected' : '' ?>><?= $l->nmSubKategori ?></option>
+    		<option value="<?= esc_html($l->idSubKategori) ?>" <?= $d->idSubKategori == $l->idSubKategori ? 'selected' : '' ?>><?= esc_html($l->nmSubKategori) ?></option>
     	<?php } ?>
     </select>
     <small id="subkategorifail" class="form-text text-danger"><?= esc_html(form_error('subkategori')); ?></small>
@@ -41,7 +41,7 @@
 	  </div>
 	  <div class="form-group col-md-4">
 	    <label for="harga">Harga</label>
-	    <input type="number" class="form-control" id="harga" aria-describedby="hargafail" placeholder="Harga" name="harga" value="<?= $d->harga ?>">
+	    <input type="number" class="form-control" id="harga" aria-describedby="hargafail" placeholder="Harga" name="harga" value="<?= esc_html($d->harga) ?>">
 	    <small id="hargafail" class="form-text text-danger"><?= esc_html(form_error('harga')); ?></small>
 	  </div>
  </div>

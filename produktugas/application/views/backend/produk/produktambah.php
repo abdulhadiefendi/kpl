@@ -10,7 +10,7 @@
     <select name="kategori" id="kategori" class="form-control" aria-describedby="kategorifail">
     	<option value="" disabled>Pilih Kategori</option>
     	<?php foreach($kategori as $l){?>
-    		<option value="<?= esc_html($l->idKategori) ?>" <?= form_error('kategori') == $l->idKategori ? 'selected' : '' ?>><?= $l->nmKategori ?></option>
+    		<option value="<?= esc_html($l->idKategori) ?>" <?= form_error('kategori') == $l->idKategori ? 'selected' : '' ?>><?= esc_html($l->nmKategori) ?></option>
     	<?php } ?>
     </select>
     <small id="kategorifail" class="form-text text-danger"><?= esc_html(form_error('kategori')); ?></small>
@@ -21,7 +21,7 @@
     <select name="subkategori" id="subkategori" class="form-control" aria-describedby="subkategorifail">
     	<option value="" disabled>Pilih Sub Kategori</option>
     	<?php foreach($subkategori as $l){?>
-    		<option value="<?= esc_html($l->idSubKategori) ?>" <?= form_error('subkategori') == $l->idSubKategori ? 'selected' : '' ?>><?= $l->nmSubKategori ?></option>
+    		<option value="<?= esc_html($l->idSubKategori) ?>" <?= form_error('subkategori') == $l->idSubKategori ? 'selected' : '' ?>><?= esc_html($l->nmSubKategori) ?></option>
     	<?php } ?>
     </select>
     <small id="subkategorifail" class="form-text text-danger"><?= esc_html(form_error('subkategori')); ?></small>

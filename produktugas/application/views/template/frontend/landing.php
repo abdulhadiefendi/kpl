@@ -14,7 +14,7 @@
 		    <label for="inputPassword6">Sub Kategori</label>
 		    <select name="subkategori" id="subkategori" class="form-control  mx-sm-3">
 		    	<?php foreach ($subkategori as $d) { ?>
-				<option value="<?= $d->idSubKategori ?>"  <?= $this->input->post('subkategori') == $d->idSubKategori ? 'selected' : ''?>><?= esc_html($d->nmSubKategori) ?></option>
+				<option value="<?= esc_html($d->idSubKategori) ?>"  <?= $this->input->post('subkategori') == $d->idSubKategori ? 'selected' : ''?>><?= esc_html($d->nmSubKategori) ?></option>
 		    	<?php } ?>
 		    </select>
 		  </div>

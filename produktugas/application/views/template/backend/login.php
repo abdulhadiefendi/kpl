@@ -27,7 +27,7 @@
                           </div>';
                   }
                   ?>
-                  <form class="user" method="post" action="<?= base_url('actlogin') ?>">
+                  <form class="user" method="post" action="<?= esc_attr(base_url('actlogin')) ?>">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" id="Email" aria-describedby="emailHelp" name="username" placeholder="Email / Username">
                     </div>

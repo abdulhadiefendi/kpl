@@ -22,14 +22,14 @@
   	<!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><?= $this->title ?></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><?= esc_html($this->title) ?></h6>
       </div>
       <div class="card-body">
-        <form action="<?= base_url('actpassword') ?>" method="post">
+        <form action="<?= esc_html(base_url('actpassword')) ?>" method="post">
           <div class="form-group">
             <label for="password">Password Lama</label>
             <input type="password" class="form-control" id="password" aria-describedby="passwordfail" placeholder="Password Lama" name="password">
-            <small id="passwordfail" class="form-text text-danger"><?= form_error('password'); ?></small>
+            <small id="passwordfail" class="form-text text-danger"><?= esc_html(form_error('password')); ?></small>
           </div>
 
           <div class="form-group">
@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="passwordbl">Ulangi Password Baru</label>
             <input type="password" class="form-control" id="passwordbl" aria-describedby="passwordblfail" placeholder="Ulangi Password" name="passwordbl">
-            <small id="passwordblfail" class="form-text text-danger"><?= form_error('passwordbl'); ?></small>
+            <small id="passwordblfail" class="form-text text-danger"><?= esc_html(form_error('passwordbl')); ?></small>
           </div>
           <button type="submit" class="btn btn-primary">Update</button>
         </form>

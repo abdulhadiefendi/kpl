@@ -50,7 +50,7 @@
     foreach ($rekap as $d) { 
       if($row <= 1){
       ?>
-        <td rowspan="<?= $d->jml ?>"><?= esc_html($d->nmKategori) ?></td>
+        <td rowspan="<?= esc_html($d->jml) ?>"><?= esc_html($d->nmKategori) ?></td>
       <?php
       $row = $d->jml; 
       }else{
@@ -58,7 +58,7 @@
       }
       if($sub <= 1){
       ?>
-        <td rowspan="<?= $d->sub ?>"><?= esc_html($d->nmSubKategori) ?></td>
+        <td rowspan="<?= esc_html($d->sub) ?>"><?= esc_html($d->nmSubKategori) ?></td>
       <?php
       $sub = $d->sub; 
       }else{
