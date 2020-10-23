@@ -11,7 +11,7 @@
     <select name="kategori" id="kategori" class="form-control" aria-describedby="kategorifail">
     	<option value="" disabled>Pilih Kategori</option>
     	<?php foreach($kategori as $l){?>
-    		<option value="<?= esc_html($l->idKategori) ?>" <?= $d->idKategori == $l->idKategori ? 'selected' : '' ?>><?= $l->nmKategori ?></option>
+    		<option value="<?= esc_html($l->idKategori) ?>" <?= $d->idKategori == $l->idKategori ? 'selected' : '' ?>><?= esc_html($l->nmKategori) ?></option>
     	<?php } ?>
     </select>
     <small id="kategorifail" class="form-text text-danger"><?= esc_html(form_error('kategori')); ?></small>
@@ -49,7 +49,7 @@
  <div class="form-group">
     <label for="gambar">Gambar</label>
     <input type="file" class="form-control" id="gambar" aria-describedby="gambarfail" placeholder="gambar" name="gambar">
-    <label for="gambar">Gambar Lama: <a target="_blank" href="<?= $d->gambar ?>"><?= esc_html($d->gambar) ?></a></label>
+    <label for="gambar">Gambar Lama: <a target="_blank" href="<?= esc_url($d->gambar) ?>"><?= esc_html($d->gambar) ?></a></label>
     <small id="gambarfail" class="form-text text-danger"><?= esc_html(form_error('gambar')); ?></small>
   </div>
 
